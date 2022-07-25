@@ -31,12 +31,12 @@
                 </div>
                 <div class="mb-2">
                     @Html.LabelFor(p => p.IsAvailable)
-                    <ul class="list-group">
-                        @foreach (var item in ViewBag.categories)
+                    <ul class="list-group list-group-flush">
+                        @foreach (var item in ViewBag.productDemos)
                         {
-                        <li class="list-group-item">
+                        <li class="list-group-item" style="width:275px; height:50px;">
                             <div class="checkbox">
-                                <input type="checkbox" id="Check_@item.Id" @*checked="@item.IsAvailable"*@ />
+                                <input type="checkbox" id="Check_@item.Id" checked="@item.IsAvailable" />
                                 <label for="Check_@item.Id">@item.Name</label>
                             </div>
                         </li>

@@ -36,8 +36,8 @@ namespace MVCOnline_Nursery.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var categoies = _dbContext.categoriesDemos.ToList();
-            ViewBag.categories = categoies;
+            var categoies = _dbContext.productDemos.ToList();
+            ViewBag.productDemos = categoies;
             return View();
            
         }
