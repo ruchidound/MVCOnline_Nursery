@@ -1,0 +1,62 @@
+﻿@using MVCOnline_Nursery.Models
+
+@model ProductDemo
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<h2>Add new product</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            @using (Html.BeginForm())
+            {
+                <div class="mb-2">
+                    @Html.LabelFor(p => p.SKU_NO)
+                    @Html.TextBoxFor(p => p.SKU_NO, new { @class = "form-control" })
+                </div>
+                <div class="mb-2">
+                    @Html.LabelFor(p => p.Name)
+                    @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                </div>
+                <div class="mb-2">
+                    @Html.LabelFor(p => p.Description)
+                    @Html.TextBoxFor(p => p.Description, new { @class = "form-control" })
+                </div>
+                <div class="mb-2">
+                    @Html.LabelFor(p => p.Price)
+                    @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+                </div>
+                <div class="mb-2">
+                    @Html.LabelFor(p => p.IsAvailable)
+                    <ul class="list-group">
+                        @foreach (var item in ViewBag.categories)
+                        {
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="Check_@item.Id" @*checked="@item.IsAvailable"*@ />
+                                <label for="Check_@item.Id">@item.Name</label>
+                            </div>
+                        </li>
+                        }
+
+                    </ul>
+
+                    @*@Html.LabelFor(p => p.IsAvailable)
+                        @Html.HiddenFor(x => x.Id)
+                        @Html.HiddenFor(x => x.Name)
+
+                        @Html.CheckBoxFor(x => x.IsAvailable)
+                        @Html.DisplayFor(x => x.Name)*@
+
+                </div>
+                <div class="mb-2">
+                    <button type="submit" class="btn btn-info">Save</button>
+                    <button type="submit" class="btn btn-danger">Reset</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

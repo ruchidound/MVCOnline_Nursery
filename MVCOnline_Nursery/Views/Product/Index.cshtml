@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MVCOnline_Nursery.Models.ProductDemo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+
+        <div class="col-6">
+            <h2>Product Details</h2>
+            <table class="table">
+                <tr>
+                    <th class="table-dark"> Id</th>
+                    <th class="table-dark"> Name</th>
+
+                </tr>
+                @foreach (var prd in Model)
+                {
+                    <tr>
+                        <td>@prd.Id</td>
+                        @*<td><a href="/Products/Details/@prd.Id">@prd.ProductName</a></td>*@
+                        <td>@Html.ActionLink(prd.Name, "Details", "Product", new { id = prd.Id }, null)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </div>
+</div>
+

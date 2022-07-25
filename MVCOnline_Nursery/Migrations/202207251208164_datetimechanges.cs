@@ -1,0 +1,16 @@
+﻿namespace MVCOnline_Nursery.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class datetimechanges : DbMigration
+    {
+        public override void Up()
+        {
+        }
+        
+        public override void Down()
+        {
+        }
+    }
+}

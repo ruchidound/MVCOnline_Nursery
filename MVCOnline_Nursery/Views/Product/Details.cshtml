@@ -1,0 +1,16 @@
+﻿@model MVCOnline_Nursery.Models.ProductDemo
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<hr />
+
+<h3>Product Name:@Model.Name</h3>
+<ul>
+    <li><b>Category:@Model.CategoriesDemo.Name</b></li>
+    @*<li><b>Category:</b>@Model.Category</li>*@
+    <li><b>Price:</b>@Model.Price</li>
+    <li><b>Quantity:</b>@Model.Description</li>
+</ul>
